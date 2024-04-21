@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RetraiteServiceService } from '../retraite-service.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AgentService } from '../agent.service';
-import { Agent } from '../agent/agent.module';
 import { ResidenceService } from '../residence.service';
+import { RetraiteServiceService } from '../retraite-service.service';
 
 @Component({
-  selector: 'app-retarite',
-  templateUrl: './retarite.component.html',
-  styleUrl: './retarite.component.css'
+  selector: 'app-update-retraite',
+  templateUrl: './update-retraite.component.html',
+  styleUrl: './update-retraite.component.css'
 })
-export class RetariteComponent implements OnInit{
+export class UpdateRetraiteComponent implements OnInit{
   retraiteForm: FormGroup;
    agent: any[]=[];
 

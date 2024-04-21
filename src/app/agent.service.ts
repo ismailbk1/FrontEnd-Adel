@@ -16,8 +16,8 @@ export class AgentService {
   public saveAgent(agent:Agent):Observable<Agent>{
    return this.httpClient.post<Agent>(`${this.api}/addAgent` ,agent)
   }
-  public getagent():Observable<Agent[]>{
-    return this.httpClient.get<Agent[]>(`${this.api}/getAgents`)
+  public getagent():Observable<any[]>{
+    return this.httpClient.get<any[]>(`${this.api}/getAgents`)
   }
   public deleteAgent(id_agent: number){
     return this.httpClient.delete('${this.api}/deleteAgent/${id_agent}')
