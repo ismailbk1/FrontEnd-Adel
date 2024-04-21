@@ -10,16 +10,17 @@ import { Route, Router } from '@angular/router';
   styleUrl: './liste-agent.component.css'
 })
 export class ListeAgentComponent implements OnInit {
-  dataSource:Agent[]=[] ;
+  dataSource:any[]=[] ;
   displayedColumns: string[] = ['id_agent', 'matricule_agent', 'nomprenom', 'sexe' , 'situation_familiale' ,'date_naissance','situation_administrative' , 'date_entree_en_activite'  ,'date_debut_position' , 'code_grade' , 'code_residence' , 'code_position' , 'edit', 'delete'];
  
   constructor(private agentservice:AgentService , 
               private router:Router
   ){
-this.getAgentListe();
+
   }
   ngOnInit(): void {
-    
+    this.getAgentListe();
+
   }
   updateAgent(id_agent:number) : void{
     this.router.navigate(['/agent', {id_agent: id_agent}]);
@@ -44,7 +45,8 @@ this.getAgentListe();
   getAgentListe(): void {
     this.agentservice.getagent().subscribe(
       {
-        next: (res: Agent[]) => {
+        next: (res: any[]) => {
+          console.log(res);
       this.dataSource=res ; 
         },
         error: (err: HttpErrorResponse)=> {

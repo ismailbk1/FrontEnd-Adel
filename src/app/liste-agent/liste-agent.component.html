@@ -55,17 +55,18 @@
 
           <ng-container matColumnDef="code_grade">
             <th mat-header-cell *matHeaderCellDef> Grade </th>
-            <td mat-cell *matCellDef="let element"> {{element.code_grade}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.grade.libelle}} </td>
           </ng-container>
+          
 
           <ng-container matColumnDef="code_residence">
             <th mat-header-cell *matHeaderCellDef> Residence </th>
-            <td mat-cell *matCellDef="let element"> {{element.code_residence}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.residence.libelle}} </td>
           </ng-container>
 
           <ng-container matColumnDef="code_position">
             <th mat-header-cell *matHeaderCellDef> Position </th>
-            <td mat-cell *matCellDef="let element"> {{element.code_position}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.position.libelle}} </td>
           </ng-container>
 
           

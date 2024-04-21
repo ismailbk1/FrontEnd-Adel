@@ -29,7 +29,7 @@ export class AgentComponent implements OnInit  {
     this.agentservice.getGrade().subscribe(
       { next: (res: Grade[]) => {
        this.grade=res;
-       console.log(res);
+     //  console.log(res);
     
         
       },
@@ -60,7 +60,7 @@ export class AgentComponent implements OnInit  {
       { next: (res: Residence[]) => {
         //console.log("222");
        this.residence=res;
-     //  console.log(this.residence)
+       console.log(this.residence)
         
       },
       error: (err: HttpErrorResponse) => {
