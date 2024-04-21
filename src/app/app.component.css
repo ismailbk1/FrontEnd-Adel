@@ -1,0 +1,4 @@
+.spacer {
+    height: 1000px; /* Définir la hauteur de l'espace vide */
+    width: 100%; /* Assurer que la largeur de l'espace vide est égale à la largeur de la page */
+}

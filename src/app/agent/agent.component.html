@@ -1,0 +1,104 @@
+<div class="spacer"></div>
+<div class="container">
+<form #agentForm="ngForm" (ngSubmit)="saveAgent(agentForm)">
+    <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listeagent">Go to Agent List</button>
+    </div>
+
+    <div class="card p-5 mt-2">
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Id agent </mat-label>
+            <input matInput placeholder="id agent" name="id agent" [(ngModel)]="agent.id_agent" disabled>
+            <mat-icon matSuffix>how_to_reg</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Matricule agent</mat-label>
+            <input matInput placeholder="matricule" name="matricule_agent"  [(ngModel)]="agent.matricule_agent">
+            <mat-icon matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>NomPrenom </mat-label>
+            <input matInput placeholder="NomPrenom" name="nomprenom" [(ngModel)]="agent.nomprenom" >
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Sexe</mat-label>
+            <mat-select name="sexe" [(ngModel)]="agent.sexe">
+                <mat-option value="option1">HOMME</mat-option>
+                <mat-option value="option2"> FEMME</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <mat-label>Situation Familiale </mat-label>
+            <mat-select name="situation_familiale" [(ngModel)]="agent.situation_familiale" >
+                <mat-option value="option1">Célibataire</mat-option>
+                <mat-option value="option2"> Mariéer</mat-option>
+                <mat-option value="option2"> Divorcée</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date de naissance </mat-label>
+            <input matInput placeholder="" type="date" id="date" name="date_naissance"required  [(ngModel)]="agent.date_naissance">
+            <mat-icon matSuffix>calendar_month</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Situation Administrative </mat-label>
+            <mat-select name="situation_administrative" [(ngModel)]="agent.situation_administrative">
+                <mat-option value="option1">En activitée</mat-option>
+                <mat-option value="option2"> </mat-option>
+                <mat-option value="option2"> </mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date entréé en activitée </mat-label>
+            <input matInput placeholder="" type="date" id="date" name="date_entree_en_activite"  required [(ngModel)]="agent.date_entree_en_activite">
+            <mat-icon matSuffix>calendar_month</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date en position </mat-label>
+            <input matInput placeholder="" type="date" id="date" name="date_debut_position"  required [(ngModel)]="agent.date_debut_position">
+            <mat-icon matSuffix>calendar_month</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Code grade</mat-label>
+            <input matInput placeholder="grade" name="code_grade" [(ngModel)]="agent.code_grade">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Code résidence </mat-label>
+            <input matInput placeholder="residence" name="code_residence" [(ngModel)]="agent.code_residence">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Code position</mat-label>
+            <input matInput placeholder="position" name="code_position" [(ngModel)]="agent.code_position" >
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <div class="text-center mt-3" >
+            <button mat-button>Clear</button>
+            <button mat-button color="primary">Save</button>
+        </div>
+
+    
+    </div>
+</form>
+</div>

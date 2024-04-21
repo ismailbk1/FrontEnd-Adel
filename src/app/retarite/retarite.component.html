@@ -1,0 +1,74 @@
+<!-- Contenu de la formulaire retraite  -->
+<div class="spacer"></div>
+
+<div class="container">
+    <h1 class  >Ajouter une demande de retraite</h1>
+    <form [formGroup]="retraiteForm" (ngSubmit)="onSubmit()">
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listeagent">Go to Retraite List</button>
+      </div>
+      
+      <mat-form-field>
+        <mat-label>Agent</mat-label>
+        <mat-select formControlName="agent">
+          <mat-option value="1">agent1</mat-option>
+          <mat-option value="2">agent2</mat-option>
+          <mat-option value="3">agent3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Résidence</mat-label>
+        <mat-select formControlName="codeResidence">
+          <mat-option value="1">résidence1</mat-option>
+          <mat-option value="2">résidence2</mat-option>
+          <mat-option value="3">résidence3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Type de retraite</mat-label>
+        <mat-select formControlName="typeRetraite">
+          <mat-option value="retraite de base">la retraite de base</mat-option>
+          <mat-option value="retraite complémentaire">la retraite complémentaire</mat-option>
+          <mat-option value="retraite supplémentaire">la retraite supplémentaire</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <label for="date_demande">Date de la demande:</label>
+      <input type="date" id="date_demande" formControlName="dateDemande" required><br><br>
+    
+      <label for="date_depart">Date départ prévisible:</label>
+      <input type="date" id="date_depart" formControlName="dateDepartPreversible" required><br><br>
+    
+      <label for="motif">Motif de la demande:</label>
+      <textarea id="motif" formControlName="motif" rows="4" cols="50" required></textarea><br><br>
+    
+      <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Status</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="status" value="Accepter" checked>
+            <label class="form-check-label" for="gridRadios1">
+              Accepter
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="status" value="Refuser">
+            <label class="form-check-label" for="gridRadios2">
+              Refuser
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="status" value="En attente">
+            <label class="form-check-label" for="gridRadios3">
+              En attente
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    
+      <button type="submit" mat-raised-button color="primary">Ajouter la demande</button>
+    </form>
+    
+  </div>
