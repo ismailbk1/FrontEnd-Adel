@@ -4,6 +4,9 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AgentService } from '../agent.service';
 import { Agent } from './agent.module';
+import { Grade } from '../Models/grade';
+import { Position } from '../Models/position';
+import { Residence } from '../Models/residence';
 
 @Component({
   selector: 'app-agent',
@@ -13,15 +16,60 @@ import { Agent } from './agent.module';
 export class AgentComponent implements OnInit  {
   isCreateAgent : boolean =true ; 
    agent: any;
-   
+   grade!:any[];
+   residence!:Residence[];
+   position!:Position[];
   constructor(private agentservice:AgentService ,
              private router:Router , 
              private activitedRouter:ActivatedRoute){
 
   }
   ngOnInit(): void {
-    this.agent=this.activitedRouter.snapshot.data['agent'] ; 
-    console.log(this.agent) ;
+    this.agent=this.activitedRouter.snapshot.data['agent'] ;
+    this.agentservice.getGrade().subscribe(
+      { next: (res: Grade[]) => {
+       this.grade=res;
+       console.log(res);
+    
+        
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+    ) ;
+    ////////////
+    this.agentservice.getPosition().subscribe(
+      { next: (res: Position[]) => {
+      
+       this.position=res;
+       //console.log("111");
+     //  console.log(this.position);
+    
+        
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+    ) ;
+    ////////////
+    this.agentservice.getResidence().subscribe(
+      { next: (res: Residence[]) => {
+        //console.log("222");
+       this.residence=res;
+     //  console.log(this.residence)
+        
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+    ) ;
+   // console.log(this.agent) ;
     if(this.agent && this.agent.id_agentW > 0) {
       this.isCreateAgent= false ;
     } else{
