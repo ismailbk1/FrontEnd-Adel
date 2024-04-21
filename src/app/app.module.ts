@@ -33,6 +33,7 @@ import { ListeuserComponent } from './listeuser/listeuser.component';
 import { UserComponent } from './user/user.component';
 import { ListebesoinComponent } from './listebesoin/listebesoin.component';
 import { BesoinComponent } from './besoin/besoin.component';
+import { UpdateRetraiteComponent } from './update-retraite/update-retraite.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { BesoinComponent } from './besoin/besoin.component';
     ListeuserComponent,
     UserComponent,
     ListebesoinComponent,
-    BesoinComponent
+    BesoinComponent,
+    UpdateRetraiteComponent
   ],
   imports: [
     BrowserModule,
