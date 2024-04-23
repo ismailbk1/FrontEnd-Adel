@@ -28,8 +28,10 @@ export class AgentComponent implements OnInit  {
     this.agent=this.activitedRouter.snapshot.data['agent'] ;
     this.agentservice.getGrade().subscribe(
       { next: (res: Grade[]) => {
+        console.log("000");
+        
        this.grade=res;
-     //  console.log(res);
+      console.log(this.grade);
     
         
       },
@@ -44,8 +46,8 @@ export class AgentComponent implements OnInit  {
       { next: (res: Position[]) => {
       
        this.position=res;
-       //console.log("111");
-     //  console.log(this.position);
+       console.log("111");
+       console.log(this.position);
     
         
       },
@@ -58,7 +60,7 @@ export class AgentComponent implements OnInit  {
     ////////////
     this.agentservice.getResidence().subscribe(
       { next: (res: Residence[]) => {
-        //console.log("222");
+        console.log("222");
        this.residence=res;
        console.log(this.residence)
         
@@ -84,7 +86,7 @@ export class AgentComponent implements OnInit  {
     { next: (res: Agent) => {
        console.log(res);
        agentForm.reset();
-       this.router.navigate(["/listeagent"])
+     //  this.router.navigate(["/listeagent"])
      },
      error: (err: HttpErrorResponse) => {
        console.log(err);

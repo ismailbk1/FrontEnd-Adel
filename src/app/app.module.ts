@@ -34,6 +34,7 @@ import { UserComponent } from './user/user.component';
 import { ListebesoinComponent } from './listebesoin/listebesoin.component';
 import { BesoinComponent } from './besoin/besoin.component';
 import { UpdateRetraiteComponent } from './update-retraite/update-retraite.component';
+import { UpdateAgentComponentComponent } from './update-agent-component/update-agent-component.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UpdateRetraiteComponent } from './update-retraite/update-retraite.compo
     UserComponent,
     ListebesoinComponent,
     BesoinComponent,
-    UpdateRetraiteComponent
+    UpdateRetraiteComponent,
+    UpdateAgentComponentComponent
   ],
   imports: [
     BrowserModule,

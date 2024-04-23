@@ -20,13 +20,13 @@ export class AgentService {
     return this.httpClient.get<any[]>(`${this.api}/getAgents`)
   }
   public deleteAgent(id_agent: number){
-    return this.httpClient.delete('${this.api}/deleteAgent/${id_agent}')
+    return this.httpClient.delete(`${this.api}/deleteAgent/${id_agent}`)
   }
   public getAgent(id_agent:number){
     return this.httpClient.get<Agent>('${this.api}/get/agents/${id_agent}') ; 
   }
   public updateAgent(agent:Agent){
-    return this.httpClient.put<Agent>('${this.api}/update/agents' ,agent) ;
+    return this.httpClient.put<Agent>(`${this.api}/updateAgent` ,agent) ;
   }
   public getGrade():Observable<Grade[]>{
     return this.httpClient.get<Grade[]>(`${this.api}/getGrades`) ;

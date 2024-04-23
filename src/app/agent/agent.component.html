@@ -29,8 +29,8 @@
         <mat-form-field>
             <mat-label>Sexe</mat-label>
             <mat-select name="sexe" [(ngModel)]="agent.sexe">
-                <mat-option value="option1">HOMME</mat-option>
-                <mat-option value="option2"> FEMME</mat-option>
+                <mat-option value="MALE">HOMME</mat-option>
+                <mat-option value="FEMALE"> FEMME</mat-option>
 
             </mat-select>
         </mat-form-field>
@@ -39,9 +39,9 @@
         <mat-form-field>
             <mat-label>Situation Familiale </mat-label>
             <mat-select name="situation_familiale" [(ngModel)]="agent.situation_familiale" >
-                <mat-option value="option1">Célibataire</mat-option>
-                <mat-option value="option2"> Mariéer</mat-option>
-                <mat-option value="option2"> Divorcée</mat-option>
+                <mat-option value="CELEBATAIRE">Célibataire</mat-option>
+                <mat-option value="MARIER"> Mariéer</mat-option>
+                <mat-option value="DIVORCE"> Divorcée</mat-option>
 
             </mat-select>
         </mat-form-field>
@@ -56,9 +56,9 @@
         <mat-form-field>
             <mat-label>Situation Administrative </mat-label>
             <mat-select name="situation_administrative" [(ngModel)]="agent.situation_administrative">
-                <mat-option value="option1">En activitée</mat-option>
-                <mat-option value="option2"> </mat-option>
-                <mat-option value="option2"> </mat-option>
+                <mat-option value="ENACTIVITE">En activitée</mat-option>
+                <mat-option value="AUTRE">Autre </mat-option>
+               
 
             </mat-select>
         </mat-form-field>
