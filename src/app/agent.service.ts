@@ -36,6 +36,9 @@ export class AgentService {
   }
   public getResidence():Observable<Residence[]>{
     return this.httpClient.get<Residence[]>(`${this.api}/getResidence`) ;
+  
   }
-
+  public getAgentById():Observable<Agent>{
+    return this.httpClient.get<Agent>(`${this.api}/getAgentById`) ;}
 }
+

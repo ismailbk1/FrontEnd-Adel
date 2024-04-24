@@ -8,6 +8,7 @@ import { Position } from '../Models/position';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ResidenceService } from '../residence.service';
 import { RetraiteServiceService } from '../retraite-service.service';
+import { Agent } from '../agent/agent.module';
 
 @Component({
   selector: 'app-update-agent-component',
@@ -16,14 +17,17 @@ import { RetraiteServiceService } from '../retraite-service.service';
 })
 export class UpdateAgentComponentComponent implements OnInit {
   retraiteForm: FormGroup;
-   agent: any[]=[];
-
-   residence:any;
+   agent!: Agent[];
+  grade!:any[]
+  position!:any[];
+   residence!:any[];
 
   constructor(private formBuilder: FormBuilder, private retraiteService: RetraiteServiceService  
     ,private agentService:AgentService
   ,
-private residenceService: ResidenceService) {
+private residenceService: ResidenceService,
+private agentservice:AgentService,
+) {
    
     this.retraiteForm = this.formBuilder.group({
       agent: ['', Validators.required],
@@ -36,36 +40,53 @@ private residenceService: ResidenceService) {
     });
   }
   ngOnInit(): void {
-    this.getAgent();
-    this.getResedence();
+    this.agentservice.getGrade().subscribe(
+      { next: (res: Grade[]) => {
+       this.grade=res;
+     //  console.log(res);
+    
+        
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+    ) ;
+    ////////////
+    this.agentservice.getPosition().subscribe(
+      { next: (res: Position[]) => {
+      
+       this.position=res;
+       //console.log("111");
+     //  console.log(this.position);
+    
+        
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+    ) ;
+    ////////////
+    this.agentservice.getResidence().subscribe(
+      { next: (res: Residence[]) => {
+        //console.log("222");
+       this.residence=res;
+       console.log(this.residence)
+        
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+    ) ;
+
   }
 
-  getAgent(){
-    this.agentService.getagent().subscribe(
-      (response)=>{
-       console.log(response);
-       this.agent = response;
-       
-      },
-      (err)=>{
-        console.log(err);
-        
-      }
-    )
-  }
-  getResedence(){
-    this.residenceService.getResidences().subscribe(
-      (response)=>{
-       console.log(response);
-       this.residence = response;
-       
-      },
-      (err)=>{
-        console.log(err);
-        
-      }
-    )
-  }
+ 
 
   onSubmit() {
     console.log("inside add new retarite demand");
@@ -86,5 +107,5 @@ private residenceService: ResidenceService) {
         );
     } 
     
-  
+    updateAgent(){}
 }

@@ -3,16 +3,34 @@
 
 <div class="container">
     <h1 class  >Update Agent</h1>
-    <form [formGroup]="retraiteForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="retraiteForm" >
       <div align="right" class="mb-3">
-        <button mat-raised-button color="primary" routerLink="/listeagent">Go to Agent List</button>
+        <button mat-raised-button color="primary" routerLink="/listeretraite">Go to Agent List</button>
       </div>
-      
+      <mat-form-field appearance="outline">
+        <mat-label>Matricule agent</mat-label>
+        <input matInput placeholder="matricule" name="matricule_agent"  formControlName="matricule_agent">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>NomPrenom </mat-label>
+        <input matInput placeholder="NomPrenom" name="nomprenom" formControlName="nomprenom" >
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Sexe</mat-label>
+        <mat-select name="sexe" formControlName="sexe">
+            <mat-option value="MALE">HOMME</mat-option>
+            <mat-option value="FEMALE"> FEMME</mat-option>
+
+        </mat-select>
+    </mat-form-field>
       <mat-form-field>
-        <mat-label>Agent</mat-label>
-        <mat-select formControlName="agent">
-          <mat-option *ngFor="let agent of agent" [value]="agent.id_agent">
-          {{agent.nomprenom}} :  {{ agent.matricule_agent }}
+        <mat-label>position</mat-label>
+        <mat-select formControlName="idposition">
+          <mat-option *ngFor="let position of position" [value]="position.idposition">
+        {{position.libelle}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -25,7 +43,12 @@
             </mat-option>
         </mat-select>
       </mat-form-field>
-    
+      <mat-form-field appearance="outline">
+        <mat-label>Code grade</mat-label>
+        <mat-select formControlName="codeGrade" placeholder="Sélectionnez un grade"  name="code_grade">
+        <mat-option *ngFor="let grade of grade" [value]="grade.idgrade">{{ grade.libelle }}</mat-option>
+        </mat-select>
+    </mat-form-field>
       <mat-form-field>
         <mat-label>Type de retraite</mat-label>
         <mat-select formControlName="typeRetraite">
@@ -35,40 +58,51 @@
         </mat-select>
       </mat-form-field>
     
-      <label for="date_demande">Date de la demande:</label>
-      <input type="date" id="date_demande" formControlName="dateDemande" required><br><br>
+      <mat-form-field>
+        <mat-label>Situation Familiale </mat-label>
+        <mat-select name="situation_familiale" formControlName="agent.situation_familiale" >
+            <mat-option value="CELEBATAIRE">Célibataire</mat-option>
+            <mat-option value="MARIER"> Mariéer</mat-option>
+            <mat-option value="DIVORCE"> Divorcée</mat-option>
+
+        </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Date de naissance </mat-label>
+        <input matInput placeholder="" type="date" id="date" name="date_naissance"required  formControlName="agent.date_naissance">
+        <mat-icon matSuffix>calendar_month</mat-icon>
+    </mat-form-field>
+
     
-      <label for="date_depart">Date départ prévisible:</label>
-      <input type="date" id="date_depart" formControlName="dateDepartPreversible" required><br><br>
+    <mat-form-field>
+        <mat-label>Situation Administrative </mat-label>
+        <mat-select name="situation_administrative" formControlName="agent.situation_administrative">
+            <mat-option value="ENACTIVITE">En activitée</mat-option>
+            <mat-option value="AUTRE">Autre </mat-option>
+           
+
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Date entréé en activitée </mat-label>
+        <input matInput placeholder="" type="date" id="date" name="date_entree_en_activite"  required ="agent.date_entree_en_activite">
+        <mat-icon matSuffix>calendar_month</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Date en position </mat-label>
+        <input matInput placeholder="" type="date" id="date" name="date_debut_position"  required ="agent.date_debut_position">
+        <mat-icon matSuffix>calendar_month</mat-icon>
+    </mat-form-field>
     
-      <label for="motif">Motif de la demande:</label>
-      <textarea id="motif" formControlName="motif" rows="4" cols="50" required></textarea><br><br>
+
     
-      <fieldset class="row mb-3">
-        <legend class="col-form-label col-sm-2 pt-0">Status</legend>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="status" value="APPROUVEE" checked>
-            <label class="form-check-label" for="gridRadios1">
-              APPROUVEE
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="status" value="REFUSEE">
-            <label class="form-check-label" for="gridRadios2">
-              Refuser
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="status" value="ENATTENTE">
-            <label class="form-check-label" for="gridRadios3">
-              En attente
-            </label>
-          </div>
-        </div>
-      </fieldset>
+     
     
-      <button type="submit" mat-raised-button color="primary">Ajouter la demande</button>
+      <button type="submit" mat-raised-button color="primary" (click)="updateAgent()">Ajouter la demande</button>
     </form>
     
   </div>
