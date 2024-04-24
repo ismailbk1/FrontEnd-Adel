@@ -1,48 +1,50 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AgentService } from '../agent.service';
-import { HttpErrorResponse } from '@angular/common/http';
 import { RetraiteServiceService } from '../retraite-service.service';
+import { CongeService } from '../conge.service';
 
 @Component({
-  selector: 'app-listeretraite',
-  templateUrl: './listeretraite.component.html',
-  styleUrl: './listeretraite.component.css'
+  selector: 'app-list-conge',
+  templateUrl: './list-conge.component.html',
+  styleUrl: './list-conge.component.css'
 })
-export class ListeretraiteComponent implements OnInit{
+export class ListCongeComponent implements OnInit{
   dataSource:any[]=[] ;
-  displayedColumns: string[] = ['iddemande', 'status', 'date_demande', 'date_depart_persivible' , 'matricule_agent' ,'nomprenom', 'edit', 'delete'];
+  displayedColumns: string[] = ['code_conge', 'date_debut','date_fin','nb_jour' ,'type', 'matricule_agent' ,'nomprenom', 'edit', 'delete'];
  
   constructor(private agentservice:AgentService , 
               private router:Router,
-              private retraiteService:RetraiteServiceService
+              private congeService:CongeService
   ){
-this.getrRtraitesListe();
   }
   ngOnInit(): void {
-    
+    this.getCongeListe();
+
   }
   updateAgent(id_agent:number) : void{
     this.router.navigate(['/agent', {id_agent: id_agent}]);
   }
 
-  deleteAgent(id:number): void{
-    console.log(id) ; 
-    this.retraiteService.deleteRetraite(id).subscribe(
+
+  deleteConge(id_Conge:number) : void{
+    console.log(id_Conge) ; 
+    this.congeService.deleteConge(id_Conge).subscribe(
       {
         next: (res) => {
           console.log(res);
-          this.getrRtraitesListe();
+          this.getCongeListe();
         },
         error: (err: HttpErrorResponse) => {
           console.log(err);
         }
       }
     );
-
   }
-  getrRtraitesListe(): void {
-    this.retraiteService.getrRtraitesListe().subscribe(
+  
+  getCongeListe(): void {
+    this.congeService.getCongeListe().subscribe(
       {
         next: (res: any[]) => {
           console.log(res);

@@ -17,6 +17,8 @@ import { BesoinComponent } from './besoin/besoin.component';
 import { ListebesoinComponent } from './listebesoin/listebesoin.component';
 import { UpdateAgentComponentComponent } from './update-agent-component/update-agent-component.component';
 import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
+import { CongeComponent } from './conge/conge.component';
+import { ListCongeComponent } from './list-conge/list-conge.component';
 
 
 const routes: Routes = [
@@ -24,7 +26,8 @@ const routes: Routes = [
   {path:"registre" , component:RegistreComponent} , 
   {path:"" , component:NavbarComponent} ,
   {path:"" , component:DashboardComponent},
-  {path:"retraite", component:RetariteComponent}, 
+  {path:"retraite", component:RetariteComponent},  
+  
   {path:"listeretraite", component:ListeretraiteComponent}, 
   {path:"mutation", component:MutationComponent},
   {path:"listemutation", component:ListemutationComponent},
@@ -36,7 +39,9 @@ const routes: Routes = [
   {path:"listebesoin", component:ListebesoinComponent},
   { path: 'update-agent/:id', component:UpdateAgentComponentComponent  , resolve:{agent:AgentResolver}},
   { path: 'update-besoin/:id', component:UpdateBesoinComponent  },
-
+//Conge 
+{path:"conge", component:CongeComponent},  
+{path:"listconge", component:ListCongeComponent},  
 ];
 
 @NgModule({
