@@ -86,21 +86,18 @@ this.besoinService.getBesoinById(this.besoinId).subscribe({
 
     }
     console.log(besoinData);
-    /*
-    this.agentService.updateAgent(agentData,this.besoinId).subscribe(
+    this.besoinService.updateBesoin(this.besoinId,besoinData).subscribe(
+      {
+        next:(res :any)=>{
+          console.log(res);
+          this.router.navigate(['/listebesoin']);
+        },
+        error:(err: HttpErrorResponse)=>{
+          console.log(err);
 
-
-      { next: (res: any) => {
-       console.log(res)
-    //   this.router.navigate(['/listeretraite']);
-      },
-      error: (err: HttpErrorResponse) => {
-        console.log(err);
+        }
       }
-    }
-
-
-    );*/
+    )
 
     }
 }

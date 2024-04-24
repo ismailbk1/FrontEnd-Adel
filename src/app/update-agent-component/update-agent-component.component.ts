@@ -144,7 +144,7 @@ this.agentService.getAgentById(this.agentId).subscribe(
 
       { next: (res: any) => {
        console.log(res)
-    //   this.router.navigate(['/listeretraite']);
+       this.router.navigate(['/listeagent']);
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
