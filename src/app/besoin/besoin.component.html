@@ -1,4 +1,43 @@
+<!-- Contenu de la formulaire retraite  -->
 <div class="spacer"></div>
-<div align="right" class="mb-3">
-  <button mat-raised-button color="primary" routerLink="/listebesoin">Go to Liste Besoins </button>
-</div>
+
+<div class="container">
+    <h1 class  >Create besoin</h1>
+    <form (submit)="createBesoin()" >
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listebesoin">Go to besoin List</button>
+      </div>
+     
+      <mat-form-field appearance="outline">
+        <mat-label>nombre de besoin par residence</mat-label>
+        <input matInput  name="nb_besoin_par_residence"  [(ngModel)]="nb_besoin_par_residence">
+      
+    </mat-form-field>
+   
+
+
+   
+      <mat-form-field>
+        <mat-label>demande </mat-label>
+        <mat-select   name="idposition"   [(ngModel)]="demandeInput">
+          <mat-option *ngFor="let demande of demande" [value]="demande.iddemande">
+        {{demande.iddemande}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>code residence </mat-label>
+        <mat-select name="codeResidence" 
+         [(ngModel)]="codeResidence">
+          <mat-option *ngFor="let residence of residence "  [value]="residence">
+            {{residence.code_residence}} 
+            </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <button type="submit" mat-raised-button color="primary" >create besoin</button>
+    </form>
+    
+  </div>
+

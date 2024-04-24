@@ -25,8 +25,8 @@ export class AgentService {
   public getAgent(id_agent:number){
     return this.httpClient.get<Agent>('${this.api}/get/agents/${id_agent}') ; 
   }
-  public updateAgent(agent:Agent){
-    return this.httpClient.put<Agent>(`${this.api}/updateAgent` ,agent) ;
+  public updateAgent(agent:any,id:any){
+    return this.httpClient.put<any>(`${this.api}/updateAgent/${id}` ,agent) ;
   }
   public getGrade():Observable<Grade[]>{
     return this.httpClient.get<Grade[]>(`${this.api}/getGrades`) ;
@@ -38,7 +38,7 @@ export class AgentService {
     return this.httpClient.get<Residence[]>(`${this.api}/getResidence`) ;
   
   }
-  public getAgentById():Observable<Agent>{
-    return this.httpClient.get<Agent>(`${this.api}/getAgentById`) ;}
+  public getAgentById(id:any):Observable<any>{
+    return this.httpClient.get<any>(`${this.api}/getAgentById/${id}`) ;}
 }
 

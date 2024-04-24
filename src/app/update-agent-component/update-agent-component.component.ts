@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Residence } from '../Models/residence';
 import { AgentService } from '../agent.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -16,30 +16,59 @@ import { Agent } from '../agent/agent.module';
   styleUrl: './update-agent-component.component.css'
 })
 export class UpdateAgentComponentComponent implements OnInit {
-  retraiteForm: FormGroup;
-   agent!: Agent[];
+  agentId!: number;
+   agent: any={};
   grade!:any[]
   position!:any[];
    residence!:any[];
+   matricule_agent!: number;
+  nomprenom!: string;
+  sexe!: string;
+  idposition!: number;
+  codeResidence!: number;
+  code_grade!: number;
+  situation_familiale!: string;
+  date_naissance!: Date;
+  situation_administrative!: string;
+  date_entree_en_activite!: string;
+  date_debut_position!: string;
 
-  constructor(private formBuilder: FormBuilder, private retraiteService: RetraiteServiceService  
-    ,private agentService:AgentService
-  ,
-private residenceService: ResidenceService,
-private agentservice:AgentService,
+  constructor( private agentService:AgentService,private residenceService: ResidenceService,private agentservice:AgentService, private route:ActivatedRoute,private router :Router
 ) {
    
-    this.retraiteForm = this.formBuilder.group({
-      agent: ['', Validators.required],
-      codeResidence: ['', Validators.required],
-      typeRetraite: ['', Validators.required],
-      dateDemande: ['', Validators.required],
-      dateDepartPreversible: ['', Validators.required],
-      motif: ['', Validators.required],
-      status: ['Accepter'] // Par défaut
-    });
+   
   }
   ngOnInit(): void {
+
+
+
+
+
+ // Récupérer l'ID de l'URL
+ this.route.params.subscribe(params => {
+  this.agentId = params['id'];
+  console.log('Agent ID:', this.agentId);
+  // Maintenant, vous pouvez utiliser this.agentId comme vous le souhaitez dans votre composant
+});
+
+this.agentService.getAgentById(this.agentId).subscribe(
+  { next: (res: any) => {
+    //console.log("222");
+    this.agent=res;
+   console.log(this.agent)
+    
+  },
+  error: (err: HttpErrorResponse) => {
+    console.log(err);
+  }
+}
+)
+
+
+
+
+
+
     this.agentservice.getGrade().subscribe(
       { next: (res: Grade[]) => {
        this.grade=res;
@@ -85,27 +114,45 @@ private agentservice:AgentService,
     ) ;
 
   }
-
  
+    
+    updateAgent(){
+  
+   
+  
+  
+   
+   
 
-  onSubmit() {
-    console.log("inside add new retarite demand");
-    
-    console.log(this.retraiteForm.value);
-    
-     this.retraiteService.addRetraite(this.retraiteForm.value)
-        .subscribe(
-          response => {
+    let agentData: any = {
+      matricule_agent:this.matricule_agent,
+      nomprenom:this.nomprenom,
+      sexe:this.sexe,
+      date_naissance:this.date_naissance,
+      situation_familiale:this.situation_familiale,
+      situation_administrative:this.situation_administrative,
+      date_entree_en_activite:this.date_entree_en_activite,
+      date_debut_position:this.date_debut_position,
+      grade:this.code_grade,
+      position:this.idposition,
+      residence:this.codeResidence
+       
 
-            console.log('Demande de retraite enregistrée avec succès !');
-            // Réinitialiser le formulaire après la sauvegarde
-            this.retraiteForm.reset();
-          },
-          error => {
-            console.error('Erreur lors de la sauvegarde de la demande de retraite :', error);
-          }
-        );
-    } 
-    
-    updateAgent(){}
+    };
+    this.agentService.updateAgent(agentData,this.agentId).subscribe(
+
+
+      { next: (res: any) => {
+       console.log(res)
+    //   this.router.navigate(['/listeretraite']);
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      }
+    }
+
+
+    );
+
+    }
 }

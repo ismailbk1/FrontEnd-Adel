@@ -16,6 +16,7 @@ import { ListeuserComponent } from './listeuser/listeuser.component';
 import { BesoinComponent } from './besoin/besoin.component';
 import { ListebesoinComponent } from './listebesoin/listebesoin.component';
 import { UpdateAgentComponentComponent } from './update-agent-component/update-agent-component.component';
+import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:"besoin", component:BesoinComponent},
   {path:"listebesoin", component:ListebesoinComponent},
   { path: 'update-agent/:id', component:UpdateAgentComponentComponent  , resolve:{agent:AgentResolver}},
+  { path: 'update-besoin/:id', component:UpdateBesoinComponent  },
 
 ];
 

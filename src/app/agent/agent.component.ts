@@ -79,9 +79,7 @@ export class AgentComponent implements OnInit  {
     }
   }
   saveAgent(agentForm:NgForm):void{
-    console.log("this is my data ");
-    console.log(agentForm.value);
-    if (this.isCreateAgent){
+  
   this.agentservice.saveAgent(this.agent).subscribe(
     { next: (res: Agent) => {
        console.log(res);
@@ -93,22 +91,15 @@ export class AgentComponent implements OnInit  {
      }
    }
      );
-}else {
-  this.agentservice.updateAgent(this.agent).subscribe(
-    {
-      next : (res:Agent) =>{
-        this.router.navigate(["/listeagent"])
-      }, 
-      error:(err: HttpErrorResponse) => {
-        console.log(err);
-      }
-    }
-  );
 }
+  
+    }
+  
+
 
 
     
-}
-}
+
+
 
 

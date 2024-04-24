@@ -3,64 +3,57 @@
 
 <div class="container">
     <h1 class  >Update Agent</h1>
-    <form [formGroup]="retraiteForm" >
+    <form (submit)="updateAgent()" >
       <div align="right" class="mb-3">
-        <button mat-raised-button color="primary" routerLink="/listeretraite">Go to Agent List</button>
+        <button mat-raised-button color="primary" routerLink="/listeagent">Go to Agent List</button>
       </div>
       <mat-form-field appearance="outline">
-        <mat-label>Matricule agent</mat-label>
-        <input matInput placeholder="matricule" name="matricule_agent"  formControlName="matricule_agent">
+       
+        <input matInput placeholder="{{agent.matricule_agent}}" name="matricule_agent"  [(ngModel)]="matricule_agent">
         <mat-icon matSuffix>vpn_key</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline">
-        <mat-label>NomPrenom </mat-label>
-        <input matInput placeholder="NomPrenom" name="nomprenom" formControlName="nomprenom" >
+     
+        <input matInput placeholder="{{agent.nomprenom}}"   name="nomprenom" [(ngModel)]="nomprenom" >
         <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Sexe</mat-label>
-        <mat-select name="sexe" formControlName="sexe">
+        <mat-label>genre</mat-label>
+        <mat-select name="sexe" placeholder="{{agent.sexe}}"   name="sexe" [(ngModel)]="sexe">
             <mat-option value="MALE">HOMME</mat-option>
             <mat-option value="FEMALE"> FEMME</mat-option>
 
         </mat-select>
     </mat-form-field>
       <mat-form-field>
-        <mat-label>position</mat-label>
-        <mat-select formControlName="idposition">
-          <mat-option *ngFor="let position of position" [value]="position.idposition">
+        <mat-label>code position </mat-label>
+        <mat-select   name="idposition"  placeholder="{{agent.idposition}}" [(ngModel)]="idposition">
+          <mat-option *ngFor="let position of position" [value]="position">
         {{position.libelle}}
           </mat-option>
         </mat-select>
       </mat-form-field>
     
       <mat-form-field>
-        <mat-label>Résidence</mat-label>
-        <mat-select formControlName="codeResidence">
-          <mat-option *ngFor="let residence of residence " [value]="residence.idresidence">
+        <mat-label>code residence </mat-label>
+        <mat-select name="codeResidence" placeholder="{{agent.codeResidence}}" [(ngModel)]="codeResidence">
+          <mat-option *ngFor="let residence of residence "  [value]="residence">
             {{residence.code_residence}} 
             </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Code grade</mat-label>
-        <mat-select formControlName="codeGrade" placeholder="Sélectionnez un grade"  name="code_grade">
-        <mat-option *ngFor="let grade of grade" [value]="grade.idgrade">{{ grade.libelle }}</mat-option>
+        <mat-select  placeholder="{{agent.code_grade}}" name="code_grade"  [(ngModel)]="code_grade" >
+        <mat-option *ngFor="let grade of grade" [value]="grade">{{ grade.libelle }}</mat-option>
         </mat-select>
     </mat-form-field>
-      <mat-form-field>
-        <mat-label>Type de retraite</mat-label>
-        <mat-select formControlName="typeRetraite">
-          <mat-option value="retraite de base">la retraite de base</mat-option>
-          <mat-option value="retraite complémentaire">la retraite complémentaire</mat-option>
-          <mat-option value="retraite supplémentaire">la retraite supplémentaire</mat-option>
-        </mat-select>
-      </mat-form-field>
+   
     
       <mat-form-field>
         <mat-label>Situation Familiale </mat-label>
-        <mat-select name="situation_familiale" formControlName="agent.situation_familiale" >
+        <mat-select name="situation_familiale" placeholder="{{agent.situation_familiale}}" name="situation_familiale"  [(ngModel)]="situation_familiale" >
             <mat-option value="CELEBATAIRE">Célibataire</mat-option>
             <mat-option value="MARIER"> Mariéer</mat-option>
             <mat-option value="DIVORCE"> Divorcée</mat-option>
@@ -70,15 +63,15 @@
 
 
     <mat-form-field appearance="outline">
-        <mat-label>Date de naissance </mat-label>
-        <input matInput placeholder="" type="date" id="date" name="date_naissance"required  formControlName="agent.date_naissance">
+        <mat-label>Situation Administrative </mat-label>
+        <input matInput placeholder="{{agent.date_naissance}}"  type="date" name="date_naissance" [(ngModel)]="date_naissance" >
         <mat-icon matSuffix>calendar_month</mat-icon>
     </mat-form-field>
 
     
     <mat-form-field>
-        <mat-label>Situation Administrative </mat-label>
-        <mat-select name="situation_administrative" formControlName="agent.situation_administrative">
+       
+        <mat-select  placeholder="{{agent.situation_administrative}}" name="situation_administrative"name="situation_administrative" [(ngModel)]="situation_administrative">
             <mat-option value="ENACTIVITE">En activitée</mat-option>
             <mat-option value="AUTRE">Autre </mat-option>
            
@@ -87,14 +80,14 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>Date entréé en activitée </mat-label>
-        <input matInput placeholder="" type="date" id="date" name="date_entree_en_activite"  required ="agent.date_entree_en_activite">
+       
+        <input matInput placeholder="{{agent.date_entree_en_activite}}" type="date" name="date_entree_en_activite" [(ngModel)]="date_entree_en_activite"   >
         <mat-icon matSuffix>calendar_month</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Date en position </mat-label>
-        <input matInput placeholder="" type="date" id="date" name="date_debut_position"  required ="agent.date_debut_position">
+        <input matInput placeholder="{{agent.date_debut_position}}"type="date" name="date_debut_position" [(ngModel)]="date_debut_position">
         <mat-icon matSuffix>calendar_month</mat-icon>
     </mat-form-field>
     
@@ -102,7 +95,7 @@
     
      
     
-      <button type="submit" mat-raised-button color="primary" (click)="updateAgent()">Ajouter la demande</button>
+      <button type="submit" mat-raised-button color="primary" >update Agent</button>
     </form>
     
   </div>
