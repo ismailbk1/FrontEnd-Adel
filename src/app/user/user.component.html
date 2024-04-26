@@ -1,4 +1,46 @@
+<!-- Contenu de la formulaire retraite  -->
 <div class="spacer"></div>
-<div align="right" class="mb-3">
-  <button mat-raised-button color="primary" routerLink="/listeuser">Go to List User </button>
-</div>
+
+<div class="container">
+    <h1 class  >Create User</h1>
+    <form (submit)="createUser()" >
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listeuser">Go to User List</button>
+      </div>
+     
+      <mat-form-field appearance="outline">
+        <mat-label>full name</mat-label>
+        <input matInput  name="fullname"  [(ngModel)]="fullname">
+      
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>email</mat-label>
+      <input type="email" matInput  name="fullname"  [(ngModel)]="email">
+    
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>password</mat-label>
+    <input matInput type="password"  name="fullname"  [(ngModel)]="password">
+  
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Sexe</mat-label>
+  <mat-select name="role" [(ngModel)]="role">
+      <mat-option value="ADMIN">ADMIN</mat-option>
+      <mat-option value="AGENT_RH"> AGENT RH</mat-option>
+      <mat-option value="RESPONSABLE"> RESPONSABLE</mat-option>
+
+  </mat-select>
+</mat-form-field>
+
+
+   
+    
+    
+      
+    
+      <button type="submit" mat-raised-button color="primary" >create user</button>
+    </form>
+    
+  </div>
+
