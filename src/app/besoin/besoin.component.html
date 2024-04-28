@@ -31,7 +31,7 @@
         <mat-select name="codeResidence" 
          [(ngModel)]="codeResidence">
           <mat-option *ngFor="let residence of residence "  [value]="residence">
-            {{residence.code_residence}} 
+            {{residence.libelle}} 
             </mat-option>
         </mat-select>
       </mat-form-field>

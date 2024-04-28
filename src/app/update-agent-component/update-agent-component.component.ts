@@ -21,12 +21,12 @@ export class UpdateAgentComponentComponent implements OnInit {
   grade!:any[]
   position!:any[];
    residence!:any[];
-   matricule_agent!: number;
+   matricule_agent!: string;
   nomprenom!: string;
   sexe!: string;
-  idposition!: number;
-  codeResidence!: number;
-  code_grade!: number;
+  idposition!: any;
+  codeResidence!: any;
+  code_grade!: any;
   situation_familiale!: string;
   date_naissance!: Date;
   situation_administrative!: string;
@@ -125,20 +125,23 @@ this.agentService.getAgentById(this.agentId).subscribe(
    
 
     let agentData: any = {
-      matricule_agent:this.matricule_agent,
-      nomprenom:this.nomprenom,
-      sexe:this.sexe,
-      date_naissance:this.date_naissance,
-      situation_familiale:this.situation_familiale,
-      situation_administrative:this.situation_administrative,
-      date_entree_en_activite:this.date_entree_en_activite,
-      date_debut_position:this.date_debut_position,
-      grade:this.code_grade,
-      position:this.idposition,
-      residence:this.codeResidence
-       
+      
+     
+        matricule_agent: this.matricule_agent !== undefined ? this.matricule_agent : this.agent.matriculeAgent,
+        nomprenom: this.nomprenom !== undefined ? this.nomprenom : this.agent.nomprenom,
+        sexe: this.sexe !== undefined ? this.sexe : this.agent.sexe,
+        date_naissance: this.date_naissance !== undefined ? this.date_naissance : this.agent.date_naissance,
+        situation_familiale: this.situation_familiale !== undefined ? this.situation_familiale : this.agent.situation_familiale,
+        situation_administrative: this.situation_administrative !== undefined ? this.situation_administrative : this.agent.situation_administrative,
+        date_entree_en_activite: this.date_entree_en_activite !== undefined ? this.date_entree_en_activite : this.agent.date_entree_en_activite,
+        date_debut_position: this.date_debut_position !== undefined ? this.date_debut_position : this.agent.date_debut_position,
+        grade: this.code_grade !== undefined ? this.code_grade : this.agent.grade,
+        position: this.idposition !== undefined ? this.idposition : this.agent.position,
+        residence: this.codeResidence !== undefined ? this.codeResidence : this.agent.residence
+     
 
     };
+    console.log(agentData);
     this.agentService.updateAgent(agentData,this.agentId).subscribe(
 
 

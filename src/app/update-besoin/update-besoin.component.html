@@ -21,7 +21,7 @@
     
     
       <mat-form-field>
-        <mat-label>code residence </mat-label>
+        
         <mat-select name="codeResidence" placeholder="{{besoin.residence.libelle}}" [(ngModel)]="codeResidence">
           <mat-option *ngFor="let residence of residence "  [value]="residence">
             {{residence.code_residence}} 

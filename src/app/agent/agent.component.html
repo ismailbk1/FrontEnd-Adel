@@ -80,19 +80,19 @@
           <mat-form-field appearance="outline">
             <mat-label>Code résidence</mat-label>
             <mat-select placeholder="Sélectionnez une résidence" [(ngModel)]="agent.code_residence" name="code_residence">
-              <mat-option *ngFor="let residence of residence" [value]="residence.idresidence">{{ residence.code_residence }}</mat-option>
+              <mat-option *ngFor="let residence of residence" [value]="residence.codeResidence">{{ residence.libelle }}</mat-option>
             </mat-select>
           </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Code grade</mat-label>
             <mat-select placeholder="Sélectionnez un grade" [(ngModel)]="agent.code_grade" name="code_grade">
-            <mat-option *ngFor="let grade of grade" [value]="grade.idgrade">{{ grade.libelle }}</mat-option>
+            <mat-option *ngFor="let grade of grade" [value]="grade.codeGrade">{{ grade.libelle }}</mat-option>
             </mat-select>
         </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Code position</mat-label>
             <mat-select placeholder="Sélectionnez une position" [(ngModel)]="agent.code_position" name="code_position">
-              <mat-option *ngFor="let position of position" [value]="position.idposition">{{ position.libelle }}</mat-option>
+              <mat-option *ngFor="let position of position" [value]="position.codePosition">{{ position.libelle }}</mat-option>
             </mat-select>
           </mat-form-field>
         

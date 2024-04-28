@@ -15,6 +15,7 @@ import { UserService } from '../user.service';
 })
 export class ListeuserComponent implements OnInit {
   user:any;
+  id:any;
   agentToUpdateId!:number;
   grade!:any[];
   residence!:Residence[];
@@ -35,28 +36,13 @@ export class ListeuserComponent implements OnInit {
 
   }
   
-  updateUser(id:number) : void{
+  updateUser(id:any) : void{
+    console.log(id);
     this.agentToUpdateId = id;
-    this.router.navigateByUrl(`/update-besoin/${id}`);
+    this.router.navigateByUrl(`/update-user/${id}`);
   }
 
-  deleteUser(id_user:number): void{
- this.besoinService.deleteBesoin(id_user).subscribe(
-{
-  next:(res:any)=>{
-    window.location.reload();
-  },
-  error:(err: HttpErrorResponse)=>{
-    console.log(err);
-
-  }
-}
-
- );
- 
- 
-
-  }
+  
 
   getUserList(): void {
     this.userService.getUser().subscribe(
@@ -65,6 +51,7 @@ export class ListeuserComponent implements OnInit {
           console.log(res);
       this.dataSource=res ;
       this.user=res; 
+      this.id=this.user.iduser;
         },
         error: (err: HttpErrorResponse)=> {
           console.log(err);
@@ -73,5 +60,14 @@ export class ListeuserComponent implements OnInit {
     );
   }
   
-  submitUpdate(){}
+ 
+  deleteUser(id:string){
+    this.userService.deleteUser(id).subscribe({
+      next:(res:any)=>{
+        console.log(res);
+        window.location.reload();
+      }
+    });
+  }
+    
 }

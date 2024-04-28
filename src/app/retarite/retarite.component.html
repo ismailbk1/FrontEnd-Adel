@@ -11,8 +11,8 @@
       <mat-form-field>
         <mat-label>Agent</mat-label>
         <mat-select formControlName="agent">
-          <mat-option *ngFor="let agent of agent" [value]="agent.id_agent">
-          {{agent.nomprenom}} :  {{ agent.matricule_agent }}
+          <mat-option *ngFor="let agent of agent" [value]="agent.matriculeAgent">
+          {{agent.nomprenom}} 
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -21,7 +21,7 @@
         <mat-label>Résidence</mat-label>
         <mat-select formControlName="codeResidence">
           <mat-option *ngFor="let residence of residence " [value]="residence.idresidence">
-            {{residence.code_residence}} 
+            {{residence.libelle}} 
             </mat-option>
         </mat-select>
       </mat-form-field>

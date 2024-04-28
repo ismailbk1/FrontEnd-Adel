@@ -18,7 +18,7 @@ export class ListeAgentComponent implements OnInit {
   residence!:Residence[];
   position!:Position[];
   dataSource:any[]=[] ;
-  displayedColumns: string[] = ['id_agent', 'matricule_agent', 'nomprenom', 'sexe' , 'situation_familiale' ,'date_naissance','situation_administrative' , 'date_entree_en_activite'  ,'date_debut_position' , 'code_grade' , 'code_residence' , 'code_position' , 'edit', 'delete'];
+  displayedColumns: string[] = [ 'matricule_agent', 'nomprenom', 'sexe' , 'situation_familiale' ,'date_naissance','situation_administrative' , 'date_entree_en_activite'  ,'date_debut_position' , 'code_grade' , 'code_residence' , 'code_position' , 'edit', 'delete'];
  
   constructor(private agentservice:AgentService , 
               private router:Router

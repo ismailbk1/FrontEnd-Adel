@@ -17,8 +17,8 @@ export class AgentComponent implements OnInit  {
   isCreateAgent : boolean =true ; 
    agent: any;
    grade!:any[];
-   residence!:Residence[];
-   position!:Position[];
+   residence!:any[];
+   position!:any[];
   constructor(private agentservice:AgentService ,
              private router:Router , 
              private activitedRouter:ActivatedRoute){

@@ -7,11 +7,7 @@
       <div align="right" class="mb-3">
         <button mat-raised-button color="primary" routerLink="/listeagent">Go to Agent List</button>
       </div>
-      <mat-form-field appearance="outline">
-       
-        <input matInput placeholder="{{agent.matricule_agent}}" name="matricule_agent"  [(ngModel)]="matricule_agent">
-        <mat-icon matSuffix>vpn_key</mat-icon>
-    </mat-form-field>
+    
     <mat-form-field appearance="outline">
      
         <input matInput placeholder="{{agent.nomprenom}}"   name="nomprenom" [(ngModel)]="nomprenom" >
@@ -39,7 +35,7 @@
         <mat-label>code residence </mat-label>
         <mat-select name="codeResidence" placeholder="{{agent.codeResidence}}" [(ngModel)]="codeResidence">
           <mat-option *ngFor="let residence of residence "  [value]="residence">
-            {{residence.code_residence}} 
+            {{residence.libelle}} 
             </mat-option>
         </mat-select>
       </mat-form-field>
@@ -63,14 +59,14 @@
 
 
     <mat-form-field appearance="outline">
-        <mat-label>Situation Administrative </mat-label>
+      <mat-label>Date de naissence </mat-label>
         <input matInput placeholder="{{agent.date_naissance}}"  type="date" name="date_naissance" [(ngModel)]="date_naissance" >
         <mat-icon matSuffix>calendar_month</mat-icon>
     </mat-form-field>
 
     
     <mat-form-field>
-       
+      <mat-label>Situation Administrative </mat-label>
         <mat-select  placeholder="{{agent.situation_administrative}}" name="situation_administrative"name="situation_administrative" [(ngModel)]="situation_administrative">
             <mat-option value="ENACTIVITE">En activitée</mat-option>
             <mat-option value="AUTRE">Autre </mat-option>

@@ -17,4 +17,13 @@ export class UserService {
   public createUser(userData:any):Observable<any>{
     return this.httpClient.post(`${this.api}/postUser`,userData)
   }
+  public findUserById(id:string):Observable<any>{
+    return this.httpClient.get<any>(`${this.api}/findUserById/${id}`)
+  }
+  public deleteUser(id:string):Observable<any>{
+    return this.httpClient.delete<any>(`${this.api}/deleteUser/${id}`)
+  }
+  public updateUser(userData:any,id:any):Observable<any>{
+    return this.httpClient.put(`${this.api}/updateUser/${id}`,userData);
+  }
 }
