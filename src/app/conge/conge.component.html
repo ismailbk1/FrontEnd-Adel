@@ -13,8 +13,8 @@
       <mat-form-field>
         <mat-label>Agent</mat-label>
         <mat-select formControlName="agent">
-          <mat-option *ngFor="let agent of agent" [value]="agent.id_agent">
-          {{agent.nomprenom}} :  {{ agent.matricule_agent }}
+          <mat-option *ngFor="let agent of agent" [value]="agent.matriculeAgent">
+          {{agent.nomprenom}} 
           </mat-option>
         </mat-select>
       </mat-form-field>
