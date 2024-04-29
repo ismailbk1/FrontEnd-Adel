@@ -28,14 +28,14 @@ export class AgentService {
   public updateAgent(agent:any,id:any){
     return this.httpClient.put<any>(`${this.api}/updateAgent/${id}` ,agent) ;
   }
-  public getGrade():Observable<Grade[]>{
-    return this.httpClient.get<Grade[]>(`${this.api}/getGrades`) ;
+  public getGrade():Observable<any[]>{
+    return this.httpClient.get<any[]>(`${this.api}/getGrades`) ;
   }
-  public getPosition():Observable<Position[]>{
-    return this.httpClient.get<Position[]>(`${this.api}/getPosition`) ;
+  public getPosition():Observable<any>{
+    return this.httpClient.get<any>(`${this.api}/getPosition`) ;
   }
-  public getResidence():Observable<Residence[]>{
-    return this.httpClient.get<Residence[]>(`${this.api}/getResidence`) ;
+  public getResidence():Observable<any>{
+    return this.httpClient.get<any>(`${this.api}/getResidence`) ;
   
   }
   public getAgentById(id:any):Observable<any>{

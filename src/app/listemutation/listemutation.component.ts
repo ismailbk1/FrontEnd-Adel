@@ -3,7 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AgentService } from '../agent.service';
 import { RetraiteServiceService } from '../retraite-service.service';
+
 import { MutationService } from '../mutation.service';
+
 
 @Component({
   selector: 'app-listemutation',
@@ -11,6 +13,10 @@ import { MutationService } from '../mutation.service';
   styleUrl: './listemutation.component.css'
 })
 export class ListemutationComponent implements OnInit{
+
+ 
+
+
   dataSource:any[]=[] ;
   displayedColumns: string[] = ['iddemande', 'date_demande', 'date_depart_persivible' , 'matricule_agent' ,'nomprenom', 'residence_muter','edit', 'delete'];
  
@@ -64,5 +70,6 @@ this.getMutationList();
     this.router.navigateByUrl(`/updateMutation/${id}`);
 
   }
+
 
 }

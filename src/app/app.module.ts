@@ -39,9 +39,23 @@ import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
 import { CongeComponent } from './conge/conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+
+
+import { GradeComponent } from './grade/grade.component';
+import { ListeGradeComponent } from './liste-grade/liste-grade.component';
+import { ResidenceComponent } from './residence/residence.component';
+import { ListeResidenceComponent } from './liste-residence/liste-residence.component';
+import { PositionComponent } from './position/position.component';
+import { ListePositionComponent } from './liste-position/liste-position.component';
+import { UpdateGradeComponent } from './update-grade/update-grade.component';
+import { UpdatePositionComponent } from './update-position/update-position.component';
+import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+
 import { UpdateCongeComponent } from './update-conge/update-conge.component';
-import { ListMutationComponent } from './list-mutation/list-mutation.component';
+
 import { UpdateMutationComponent } from './update-mutation/update-mutation.component';
+import { ListMutationComponent } from './list-mutation/list-mutation.component';
+
 
 @NgModule({
   declarations: [
@@ -68,9 +82,25 @@ import { UpdateMutationComponent } from './update-mutation/update-mutation.compo
     CongeComponent,
     ListCongeComponent,
     UpdateUserComponent,
+
+
+    GradeComponent,
+    ListeGradeComponent,
+    ResidenceComponent,
+    ListeResidenceComponent,
+    PositionComponent,
+    ListePositionComponent,
+    UpdateGradeComponent,
+    UpdatePositionComponent,
+    UpdateResidenceComponent,
+
     UpdateCongeComponent,
     ListMutationComponent,
     UpdateMutationComponent
+
+
+  
+
   ],
   imports: [
     BrowserModule,
