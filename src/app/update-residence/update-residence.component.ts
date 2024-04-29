@@ -67,7 +67,7 @@ this.residenceService.getResidenceById(this.residenceId).subscribe({
     
     updateResidence(){
   let ressidenceData: any = {
-    direction:this.codeDirection,
+    codeDirection:this.codeDirection,
     libelle:this.libelle
     
        

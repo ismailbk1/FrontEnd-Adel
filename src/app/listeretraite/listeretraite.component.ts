@@ -56,4 +56,11 @@ this.getrRtraitesListe();
     );
   }
 
+  updateRetraite(id:number){
+    console.log(id);
+    
+    this.router.navigateByUrl(`/updateRetraite/${id}`);
+
+  }
+
 }

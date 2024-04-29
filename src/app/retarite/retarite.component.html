@@ -20,7 +20,7 @@
       <mat-form-field>
         <mat-label>Résidence</mat-label>
         <mat-select formControlName="codeResidence">
-          <mat-option *ngFor="let residence of residence " [value]="residence.idresidence">
+          <mat-option *ngFor="let residence of residence " [value]="residence.codeResidence">
             {{residence.libelle}} 
             </mat-option>
         </mat-select>

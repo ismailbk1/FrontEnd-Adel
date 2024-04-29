@@ -20,6 +20,7 @@ import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
 import { CongeComponent } from './conge/conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+
 import { PositionComponent } from './position/position.component';
 import { ListePositionComponent } from './liste-position/liste-position.component';
 import { ListeResidenceComponent } from './liste-residence/liste-residence.component';
@@ -30,16 +31,25 @@ import { UpdatePositionComponent } from './update-position/update-position.compo
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
 import { ResidenceComponent } from './residence/residence.component';
 
+import { UpdateRetraiteComponent } from './update-retraite/update-retraite.component';
+import { UpdateCongeComponent } from './update-conge/update-conge.component';
+import { UpdateMutationComponent } from './update-mutation/update-mutation.component';
+
+
 
 const routes: Routes = [
   {path:"login" , component:LoginComponent} , 
   {path:"registre" , component:RegistreComponent} , 
   {path:"" , component:NavbarComponent} ,
   {path:"" , component:DashboardComponent},
+
+  //retraite
   {path:"retraite", component:RetariteComponent},  
-  
   {path:"listeretraite", component:ListeretraiteComponent}, 
-  {path:"mutation", component:MutationComponent},
+  { path: 'updateRetraite/:id', component:UpdateRetraiteComponent  },
+
+
+
   {path:"listemutation", component:ListemutationComponent},
   {path:"listeagent", component:ListeAgentComponent},
   {path:"agent" , component:AgentComponent , resolve:{agent:AgentResolver}}, 
@@ -50,9 +60,17 @@ const routes: Routes = [
   { path: 'update-agent/:id', component:UpdateAgentComponentComponent  , resolve:{agent:AgentResolver}},
   { path: 'update-besoin/:id', component:UpdateBesoinComponent  },
   { path: 'update-user/:id', component:UpdateUserComponent  },
+
+//Mutation
+{path:"mutation", component:MutationComponent},
+{path:"listMutation", component:ListemutationComponent}, 
+{ path: 'updateMutation/:id', component:UpdateMutationComponent  },
+
+
 //Conge 
 {path:"conge", component:CongeComponent},  
 {path:"listconge", component:ListCongeComponent},  
+
 {path:"position",component:PositionComponent},
 {path:"listeposition",component:ListePositionComponent},
 {path:"residence",component:ResidenceComponent},
@@ -62,6 +80,10 @@ const routes: Routes = [
 { path: 'update-grade/:id', component:UpdateGradeComponent  },
 { path: 'update-position/:id', component:UpdatePositionComponent  },
 { path: 'update-residence/:id', component:UpdateResidenceComponent  },
+
+{ path: 'updateConge/:id', component:UpdateCongeComponent  },
+
+
 ];
 
 @NgModule({
