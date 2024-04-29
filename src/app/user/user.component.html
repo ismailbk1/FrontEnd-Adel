@@ -1,4 +1,5 @@
 <!-- Contenu de la formulaire retraite  -->
+<app-navbar></app-navbar>
 <div class="spacer"></div>
 
 <div class="container">
@@ -24,11 +25,13 @@
   
 </mat-form-field>
 <mat-form-field>
-  <mat-label>Sexe</mat-label>
+  <mat-label>Role</mat-label>
   <mat-select name="role" [(ngModel)]="role">
       <mat-option value="ADMIN">ADMIN</mat-option>
       <mat-option value="AGENT_RH"> AGENT RH</mat-option>
-      <mat-option value="RESPONSABLE"> RESPONSABLE</mat-option>
+      <mat-option value="responsableRH"> responsableRH</mat-option>
+      <mat-option value="ResponsableDemande"> ResponsableDemande</mat-option>
+      <mat-option value="ResponsableReseaux"> ResponsableReseaux</mat-option>
 
   </mat-select>
 </mat-form-field>

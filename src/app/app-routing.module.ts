@@ -26,10 +26,9 @@ import { UpdateMutationComponent } from './update-mutation/update-mutation.compo
 
 
 const routes: Routes = [
-  {path:"login" , component:LoginComponent} , 
+  {path:"" , component:LoginComponent} , 
   {path:"registre" , component:RegistreComponent} , 
-  {path:"" , component:NavbarComponent} ,
-  {path:"" , component:DashboardComponent},
+  {path:"navbar" , component:NavbarComponent} ,
 
   //retraite
   {path:"retraite", component:RetariteComponent},  

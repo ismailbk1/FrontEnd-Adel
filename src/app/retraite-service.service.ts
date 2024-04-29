@@ -26,6 +26,6 @@ export class RetraiteServiceService {
   }
   public updaateRetraite(id:number,retarite:any):Observable<any>{
     return this.httpClient.put(`${this.api}/retraites/${id}`,retarite);
-
+    
   }
 }
