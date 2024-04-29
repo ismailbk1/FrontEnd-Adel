@@ -39,6 +39,9 @@ import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
 import { CongeComponent } from './conge/conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateCongeComponent } from './update-conge/update-conge.component';
+import { ListMutationComponent } from './list-mutation/list-mutation.component';
+import { UpdateMutationComponent } from './update-mutation/update-mutation.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +67,10 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     UpdateBesoinComponent,
     CongeComponent,
     ListCongeComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    UpdateCongeComponent,
+    ListMutationComponent,
+    UpdateMutationComponent
   ],
   imports: [
     BrowserModule,

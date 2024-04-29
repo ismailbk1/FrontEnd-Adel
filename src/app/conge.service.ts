@@ -19,4 +19,10 @@ export class CongeService {
   public deleteConge(id:number):Observable<any>{
     return this.httpClient.delete(`${this.api}/conges/${id}`);
   }
+  public getConge(id:number):Observable<any>{
+    return this.httpClient.get(`${this.api}/conges/${id}`);
+  }
+  public updateConge(id:number,conge:any):Observable<any>{
+    return this.httpClient.put(`${this.api}/conges/${id}`,conge);
+  }
 }

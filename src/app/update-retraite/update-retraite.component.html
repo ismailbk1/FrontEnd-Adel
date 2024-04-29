@@ -2,7 +2,7 @@
 <div class="spacer"></div>
 
 <div class="container">
-    <h1 class  >Ajouter une demande de retraite</h1>
+    <h1 class  >Update Retraite  </h1>
     <form [formGroup]="retraiteForm" (ngSubmit)="onSubmit()">
       <div align="right" class="mb-3">
         <button mat-raised-button color="primary" routerLink="/listeretraite">Go to Retraite List</button>
@@ -10,9 +10,9 @@
       
       <mat-form-field>
         <mat-label>Agent</mat-label>
-        <mat-select formControlName="agent">
-          <mat-option *ngFor="let agent of agent" [value]="agent.id_agent">
-          {{agent.nomprenom}} :  {{ agent.matricule_agent }}
+        <mat-select formControlName="agent"  >
+          <mat-option *ngFor="let agent of agent" [value]="agent.matriculeAgent">
+          {{agent.nomprenom}} 
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -20,14 +20,14 @@
       <mat-form-field>
         <mat-label>Résidence</mat-label>
         <mat-select formControlName="codeResidence">
-          <mat-option *ngFor="let residence of residence " [value]="residence.idresidence">
-            {{residence.code_residence}} 
+          <mat-option *ngFor="let residence of residence " [value]="residence.codeResidence">
+            {{residence.libelle}} 
             </mat-option>
         </mat-select>
       </mat-form-field>
     
       <mat-form-field>
-        <mat-label>Type de retraite</mat-label>
+        <mat-label  >Type de retraite</mat-label>
         <mat-select formControlName="typeRetraite">
           <mat-option value="retraite de base">la retraite de base</mat-option>
           <mat-option value="retraite complémentaire">la retraite complémentaire</mat-option>
@@ -68,7 +68,7 @@
         </div>
       </fieldset>
     
-      <button type="submit" mat-raised-button color="primary">Ajouter la demande</button>
+      <button type="submit" mat-raised-button color="primary">Update la demande</button>
     </form>
     
   </div>

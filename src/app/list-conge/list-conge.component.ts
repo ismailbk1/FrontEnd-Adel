@@ -23,8 +23,9 @@ export class ListCongeComponent implements OnInit{
     this.getCongeListe();
 
   }
-  updateAgent(id_agent:number) : void{
-    this.router.navigate(['/agent', {id_agent: id_agent}]);
+  updateConge(id:number) : void{
+    this.router.navigateByUrl(`/updateConge/${id}`);
+
   }
 
 

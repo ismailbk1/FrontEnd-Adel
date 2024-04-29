@@ -18,8 +18,7 @@ export class CongeComponent implements OnInit{
 
   constructor(private formBuilder: FormBuilder, private congeService: CongeService  
     ,private agentService:AgentService
-  ,
-private residenceService: ResidenceService) {
+  ,private residenceService: ResidenceService) {
    
     this.congeForm = this.formBuilder.group({
       agent: ['', Validators.required],
@@ -33,7 +32,6 @@ private residenceService: ResidenceService) {
   }
   ngOnInit(): void {
     this.getAgent();
-  
   }
 
   getAgent(){
