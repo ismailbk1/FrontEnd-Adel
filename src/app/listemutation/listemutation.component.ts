@@ -11,5 +11,8 @@ import { RetraiteServiceService } from '../retraite-service.service';
   styleUrl: './listemutation.component.css'
 })
 export class ListemutationComponent implements OnInit{
+  ngOnInit(): void {
+   
+  }
 
 }
