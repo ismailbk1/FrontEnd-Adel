@@ -1,0 +1,36 @@
+<!-- Contenu de la formulaire retraite  -->
+<div class="spacer"></div>
+
+<div class="container">
+    <h1 class  >Create residence</h1>
+    <form (submit)="createResidence()" >
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listeresidence">Go to residence List</button>
+      </div>
+     
+      <mat-form-field appearance="outline">
+        <mat-label>code residence</mat-label>
+        <input matInput  name="codeResidence"  [(ngModel)]="codeResidence">
+
+    </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>code direction</mat-label>
+            <mat-select placeholder="Sélectionnez une direction" [(ngModel)]="codeDirection" name="codeDirection">
+              <mat-option *ngFor="let direction of direction" [value]="direction">{{ direction?.libelle }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+   
+    <mat-form-field appearance="outline">
+        <mat-label>libelle</mat-label>
+        <input matInput  name="libelle"  [(ngModel)]="libelle">
+      
+    </mat-form-field>
+   
+
+    
+      <button type="submit" mat-raised-button color="primary" >create residence</button>
+    </form>
+    
+  </div>
+

@@ -1,0 +1,39 @@
+.spacer {
+    height: 100px; /* Définir la hauteur de l'espace vide */
+    width: 100%; /* Assurer que la largeur de l'espace vide est égale à la largeur de la page */
+}
+
+.toolbar {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Styles pour les boutons dans la barre d'outils */
+.toolbar button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Style pour le lien dans la barre d'outils */
+.toolbar a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

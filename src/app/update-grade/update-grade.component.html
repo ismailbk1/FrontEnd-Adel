@@ -1,0 +1,22 @@
+<!-- Contenu de la formulaire retraite  -->
+<div class="spacer"></div>
+
+<div class="container">
+    <h1 class  >Update Grade</h1>
+    <form (submit)="updateGrade()" >
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listegrade">Go to Grade List</button>
+      </div>
+      <mat-form-field appearance="outline">
+       
+        <input matInput placeholder="{{grade?.libelle}}" name="libelle"  [(ngModel)]="libelle">
+        
+    </mat-form-field>
+  
+
+    
+    
+     <button type="submit" mat-raised-button color="primary" >update Grade</button>
+    </form>
+    
+  </div>

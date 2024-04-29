@@ -20,6 +20,15 @@ import { UpdateBesoinComponent } from './update-besoin/update-besoin.component';
 import { CongeComponent } from './conge/conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { PositionComponent } from './position/position.component';
+import { ListePositionComponent } from './liste-position/liste-position.component';
+import { ListeResidenceComponent } from './liste-residence/liste-residence.component';
+import { ListeGradeComponent } from './liste-grade/liste-grade.component';
+import { GradeComponent } from './grade/grade.component';
+import { UpdateGradeComponent } from './update-grade/update-grade.component';
+import { UpdatePositionComponent } from './update-position/update-position.component';
+import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+import { ResidenceComponent } from './residence/residence.component';
 
 
 const routes: Routes = [
@@ -44,6 +53,15 @@ const routes: Routes = [
 //Conge 
 {path:"conge", component:CongeComponent},  
 {path:"listconge", component:ListCongeComponent},  
+{path:"position",component:PositionComponent},
+{path:"listeposition",component:ListePositionComponent},
+{path:"residence",component:ResidenceComponent},
+{path:"grade",component:GradeComponent},
+{path:"listegrade",component:ListeGradeComponent},
+{path:"listeresidence",component:ListeResidenceComponent},
+{ path: 'update-grade/:id', component:UpdateGradeComponent  },
+{ path: 'update-position/:id', component:UpdatePositionComponent  },
+{ path: 'update-residence/:id', component:UpdateResidenceComponent  },
 ];
 
 @NgModule({

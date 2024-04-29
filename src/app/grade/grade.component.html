@@ -1,0 +1,28 @@
+<!-- Contenu de la formulaire retraite  -->
+<div class="spacer"></div>
+
+<div class="container">
+    <h1 class  >Create grade</h1>
+    <form (submit)="createGrade()" >
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listegrade">Go to grade List</button>
+      </div>
+     
+      <mat-form-field appearance="outline">
+        <mat-label>code grade</mat-label>
+        <input matInput  name="codeGrade"  [(ngModel)]="codeGrade">
+      
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>libelle</mat-label>
+        <input matInput  name="libelle"  [(ngModel)]="libelle">
+      
+    </mat-form-field>
+   
+
+    
+      <button type="submit" mat-raised-button color="primary" >create grade</button>
+    </form>
+    
+  </div>
+
