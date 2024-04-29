@@ -1,19 +1,25 @@
-conteneur {
-    display: flex;
-    align-items: center;
-    height: 300px;
-  }
-  img {
-    width: 500px;
-    height: 250px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0%, -50%);
-  }
-  .spacer {
-    height: 100px; /* Définir la hauteur de l'espace vide */
-    width: 100%; /* Assurer que la largeur de l'espace vide est égale à la largeur de la page */
+.form-control-user {
+  border-radius: 25px;
+  border: 1px solid #ced4da;
+  padding: 12px 20px;
+  margin-bottom: 20px;
 }
-h1{
-  color: #1f026e;
+img {
+  width: 500px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+/* Ajout d'une marge entre les champs de formulaire */
+.form-control-user + .form-control-user {
+  margin-top: 10px;
+}
+/* Style pour le contenu du formulaire */
+.right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }

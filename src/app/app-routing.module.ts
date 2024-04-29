@@ -21,6 +21,7 @@ import { CongeComponent } from './conge/conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
+
 import { PositionComponent } from './position/position.component';
 import { ListePositionComponent } from './liste-position/liste-position.component';
 import { ListeResidenceComponent } from './liste-residence/liste-residence.component';
@@ -32,8 +33,9 @@ import { UpdateResidenceComponent } from './update-residence/update-residence.co
 import { ResidenceComponent } from './residence/residence.component';
 
 import { UpdateRetraiteComponent } from './update-retraite/update-retraite.component';
-import { UpdateCongeComponent } from './update-conge/update-conge.component';
 import { UpdateMutationComponent } from './update-mutation/update-mutation.component';
+import { UpdateCongeComponent } from './update-conge/update-conge.component';
+
 
 
 
@@ -71,6 +73,7 @@ const routes: Routes = [
 {path:"conge", component:CongeComponent},  
 {path:"listconge", component:ListCongeComponent},  
 
+
 {path:"position",component:PositionComponent},
 {path:"listeposition",component:ListePositionComponent},
 {path:"residence",component:ResidenceComponent},
@@ -80,6 +83,10 @@ const routes: Routes = [
 { path: 'update-grade/:id', component:UpdateGradeComponent  },
 { path: 'update-position/:id', component:UpdatePositionComponent  },
 { path: 'update-residence/:id', component:UpdateResidenceComponent  },
+
+{ path: 'updateConge/:id', component:UpdateCongeComponent  },
+
+
 
 { path: 'updateConge/:id', component:UpdateCongeComponent  },
 

@@ -1,0 +1,53 @@
+  <!-- Contenu de la formulaire retraite  -->
+  <div class="spacer"></div>
+
+  <div class="container">
+      <h1 class  >Add Mutation </h1>
+      <form [formGroup]="retraiteForm" (ngSubmit)="onSubmit()">
+        <div align="right" class="mb-3">
+          <button mat-raised-button color="primary" routerLink="/listMutation">Go to Mutation List</button>
+        </div>
+        
+        <mat-form-field>
+          <mat-label>Agent:</mat-label>
+          <mat-select formControlName="agent">
+            <mat-option *ngFor="let agent of agent" [value]="agent.matriculeAgent">
+            {{agent.nomprenom}} 
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>Code residence actuel:</mat-label>
+          <mat-select formControlName="codeResidenceactuel">
+            <mat-option *ngFor="let residence of residence " [value]="residence.codeResidence">
+              {{residence.libelle}} 
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Code residence à muter</mat-label>
+          <mat-select formControlName="codeResidencemuter">
+            <mat-option *ngFor="let residence of residence " [value]="residence.codeResidence">
+              {{residence.libelle}} 
+              </mat-option>
+          </mat-select>
+        </mat-form-field>
+      
+      
+      
+        <label for="date_demande">Date de la demande:</label>
+        <input type="date" id="date_demande" formControlName="dateDemande" required><br><br>
+      
+        <label for="date_depart">Date départ prévisible:</label>
+        <input type="date" id="date_depart" formControlName="dateDepartPreversible" required><br><br>
+      
+        <label for="motif">Motif de la demande:</label>
+        <textarea id="motif" formControlName="motif" rows="4" cols="50" required></textarea><br><br>
+   
+      
+        <button type="submit" mat-raised-button color="primary">Update la demande</button>
+      </form>
+      
+    </div>
+  

@@ -1,0 +1,46 @@
+<!-- Contenu de la formulaire retraite  -->
+<div class="spacer"></div>
+
+<div class="container">
+    <h1 class  >Update Conge </h1>
+    <form [formGroup]="congeForm" (ngSubmit)="onSubmit()">
+      <div align="right" class="mb-3">
+        <button mat-raised-button color="primary" routerLink="/listconge">Go to Conge List</button>
+      </div>
+      
+      <label for="">code conge:</label>
+      <input type="text" id="" formControlName="code_conge" required><br><br>
+      <mat-form-field>
+        <mat-label>Agent</mat-label>
+        <mat-select formControlName="agent">
+          <mat-option *ngFor="let agent of agent" [value]="agent.matriculeAgent">
+          {{agent.nomprenom}} 
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Type de Conge</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value="retraite de base">Congé annuel</mat-option>
+          <mat-option value="Congé obligatoire">Congé obligatoire</mat-option>
+          <mat-option value="Congé spécial">Congé spécial</mat-option>
+          <mat-option value="Congé spécial">Congé de maternité ou parental</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <label for="date_debut">Date de debut:</label>
+      <input type="date" id="date_debut" formControlName="date_debut" required><br><br>
+    
+      <label for="date_fin">Date de fin:</label>
+      <input type="date" id="date_fin" formControlName="date_fin" required><br><br>
+    
+      <label for="">nomber de jour:</label>
+      <input type="text" id="" formControlName="nb_jour" required><br><br>
+    
+      
+    
+      <button type="submit" mat-raised-button color="primary">Update la demande</button>
+    </form>
+    
+  </div>
